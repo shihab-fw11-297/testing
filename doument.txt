@@ -1,0 +1,109 @@
+I want to build a production-level Node.js application folder wise like making production level application for apply that processes Forex data using an API, analyzes the data step-by-step by applying core features, and determines an accurate final market direction.should be applied sequentially to ensure the direction—Bullish, Bearish, or Neutral—is determined with precision and reliability.and i want to make like when i hit one route and apply all core feature and give final direction and i want full code each and every line
+
+ https://api.finage.co.uk/agg/forex/${pair}/${resolution}/minute/${dates.yesterday}/${dates.tomorrow}?apikey=API_KEY0eCP3AS1W5VA426061GRKH7GQSZNLSNR
+
+
+Core Features for a Short-Term Market Direction
+
+ 1. Market Condition Identifier (Trending or Ranging)  
+- Purpose: Determine the current market condition.  
+- Implementation:  
+  - Analyze price movement:  
+    - Uptrend: Higher highs and higher lows.  
+    - Downtrend: Lower highs and lower lows.  
+    - Ranging: Price oscillates between defined support and resistance levels.  
+  - Signal Output:  
+    - Bullish: Clear uptrend.  
+    - Bearish: Clear downtrend.  
+    - Neutral: Sideways movement.  
+
+ 2. Key Levels Detection (Support, Resistance, and Trendlines)  
+- Purpose: Highlight significant levels where price may react.  
+- Implementation:  
+  - Automatically mark horizontal support and resistance zones.  
+  - Draw trendlines connecting key swing highs and lows.  
+  - Signal Output:  
+    - Bullish: Breakout above resistance or bounce from support.  
+    - Bearish: Breakdown below support or rejection at resistance.  
+    - Neutral: Price oscillating within the levels.  
+
+ 3. Candlestick Pattern Analyzer  
+- Purpose: Confirm market direction using key candlestick patterns.  
+- Implementation:  
+  - Identify and label patterns like:  
+    - Pin Bar: Long wicks at key levels for reversals.  
+    - Engulfing Candle: Momentum shift.  
+  - Signal Output:  
+    - Combine patterns with key levels to confirm:  
+      - Bullish: Pin bar or bullish engulfing at support or trendline.  
+      - Bearish: Shooting star or bearish engulfing at resistance.  
+
+ 4. Momentum Detection (Strength of Movement)  
+- Purpose: Confirm strength in price direction.  
+- Implementation:  
+  - Identify consecutive large candles in one direction (momentum bars).  
+  - Use RSI (14):  
+    - Above 50: Bullish momentum.  
+    - Below 50: Bearish momentum.  
+  - Signal Output:  
+    - Bullish: Strong up bars or RSI > 50.  
+    - Bearish: Strong down bars or RSI < 50.  
+    - Neutral: Weak or conflicting momentum.  
+
+ 5. Moving Average Trend Confirmation  
+- Purpose: Confirm trends using EMA crossovers.  
+- Implementation:  
+  - Use EMA (9) and EMA (21):  
+    - EMA (9) above EMA (21): Uptrend.  
+    - EMA (9) below EMA (21): Downtrend.  
+  - Signal Output:  
+    - Bullish: EMA (9) crossing above EMA (21).  
+    - Bearish: EMA (9) crossing below EMA (21).  
+
+ 6. Breakout and Range Trading  
+- Purpose: Identify breakouts from consolidation zones or range-bound reversals.  
+- Implementation:  
+  - Detect tight ranges or consolidation zones.  
+  - Alert on breakout candles with high volume.  
+  - Signal Output:  
+    - Bullish: Breakout above range or resistance.  
+    - Bearish: Breakdown below range or support.  
+    - Neutral: Price remains within consolidation.  
+
+ 7. Fibonacci Retracement Tool  
+- Purpose: Spot retracement levels for entries in trending markets.  
+- Implementation:  
+  - Automatically draw Fibonacci levels (38.2%, 50%, 61.8%) from swing highs/lows.  
+  - Identify candlestick patterns at these levels.  
+  - Signal Output:  
+    - Bullish: Rejection or reversal at Fibonacci support levels.  
+    - Bearish: Rejection or reversal at Fibonacci resistance levels.  
+
+ 8. Pivot Points Analysis  
+- Purpose: Provide intraday levels for bounces or breakouts.  
+- Implementation:  
+  - Automatically calculate and display pivot levels (central pivot, support, resistance).  
+  - Signal Output:  
+    - Bullish: Bounce from pivot support or breakout above pivot resistance.  
+    - Bearish: Rejection at pivot resistance or breakdown below pivot support.  
+
+ 9. Bollinger Bands for Volatility  
+- Purpose: Identify breakout opportunities or reversals.  
+- Implementation:  
+  - Monitor band squeezes for volatility breakouts.  
+  - Alert on price rejection at outer bands.  
+  - Signal Output:  
+    - Bullish: Breakout above upper band or rejection at lower band.  
+    - Bearish: Breakout below lower band or rejection at upper band.  
+
+ 10. Comprehensive Signal Output  
+- Purpose: Combine all features to deliver a single actionable direction.  
+- Implementation:  
+  - Use a scoring system based on the above indicators to assign weights:  
+    - Bullish signals: +1 point.  
+    - Bearish signals: -1 point.  
+    - Neutral signals: 0 points.  
+  - Aggregate scores to provide a final signal:  
+    - Bullish: Positive total score.  
+    - Bearish: Negative total score.  
+    - Neutral: Zero or conflicting scores.  

@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2024-12-29T06:49:03.420Z",
+    "direction": "STRONGLY_BEARISH",
+    "confidence": 1,
+    "weightedScore": -2
+  },
+  {
+    "timestamp": "2024-12-29T06:50:01.498Z",
+    "direction": "STRONGLY_BEARISH",
+    "confidence": 1,
+    "weightedScore": -2
+  }
+]
